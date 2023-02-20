@@ -50,6 +50,16 @@
   --text-color: var(--dark);
 }
 
+@font-face {
+  font-family: "dseg";
+  src: url("../public/assets/font/DSEG7Modern-Bold.woff") format("woff"),
+    url("../public/assets/font/DSEG7Modern-BoldItalic.woff") format("woff"),
+    url("../public/assets/font/DSEG7Modern-Italic.woff") format("woff"),
+    url("../public/assets/font/DSEG7Modern-Light.woff") format("woff"),
+    url("../public/assets/font/DSEG7Modern-LightItalic.woff") format("woff"),
+    url("../public/assets/font/DSEG7Modern-Regular.woff") format("woff");
+}
+
 // # themes
 
 #bgContainer {

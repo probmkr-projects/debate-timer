@@ -6,11 +6,11 @@ const App: React.FC<Record<string, never>> = () => {
     <div className="App">
       <div className="timer">
         <div className="time">
-          <span id="min" className="min"></span>
+          <span id="min" className="time-num min">5</span>
           <span className="sep">:</span>
-          <span id="sec" className="sec"></span>
+          <span id="sec" className="time-num sec">05</span>
           <span className="sep">:</span>
-          <span id="msec" className="msec"></span>
+          <span id="msec" className="time-num msec">05</span>
         </div>
         <div className="buttons">
           <div className="start-pause"></div>
