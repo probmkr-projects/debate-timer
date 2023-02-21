@@ -7,7 +7,14 @@ const App: React.FC<Record<string, never>> = () => {
     <div className="App">
       <div className="timer">
         <div className="time">
-          <div className="time-wrap">
+          <div
+            className="time-wrap"
+            onClick={(event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+              const range = document.createRange();
+              range.selectNode(event.currentTarget);
+              window.getSelection()?.addRange(range);
+            }}
+          >
             <span id="min" className="time-num min">
               5
             </span>
@@ -22,9 +29,21 @@ const App: React.FC<Record<string, never>> = () => {
           </div>
         </div>
         <div className="buttons">
-          <div className="start-pause">
+          <div
+            className="start-pause"
+            onClick={(event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+              const play = document.querySelector(
+                ".start-pause .bi-play-circle"
+              );
+              const pause = document.querySelector(
+                ".start-pause .bi-pause-circle"
+              );
+              play?.classList.toggle("hide");
+              pause?.classList.toggle("hide");
+            }}
+          >
             <PlayIcon />
-            <PauseIcon />
+            <PauseIcon className="hide" />
           </div>
           <div className="next"></div>
         </div>

@@ -1,11 +1,14 @@
 import React from "react";
 
-export const PlayIcon: React.FC<Record<string, never>> = () => {
+export const PlayIcon: React.FC<{ className?: string; id?: string }> = ({
+  className,
+  id,
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="currentColor"
-      className="bi bi-play-circle"
+      className={`bi bi-play-circle ${className ? className : ""}`}
+      id={id}
       viewBox="0 0 16 16"
     >
       <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -14,11 +17,15 @@ export const PlayIcon: React.FC<Record<string, never>> = () => {
   );
 };
 
-export const PauseIcon: React.FC<Record<string, never>> = () => {
+export const PauseIcon: React.FC<{ className?: string; id?: string }> = ({
+  className,
+  id,
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="bi bi-pause-circle"
+      className={`bi bi-pause-circle ${className ? className : ""}`}
+      id={id}
       viewBox="0 0 16 16"
     >
       <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
