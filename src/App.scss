@@ -16,16 +16,32 @@
       background-color: #fff;
       font-size: 80px;
       font-family: "dseg";
-      padding-bottom: 10px;
+      background-color: yellow;
+      display: flex;
+      justify-content: center;
 
-      span {
-        display: inline-block;
+      .time-wrap {
+        span {
+          background-color: green;
+          display: inline-block;
+        }
+
+        span.time-num {
+          // transform: translateY(6%);
+          width: 1.7em;
+          text-align: right;
+        }
       }
+    }
 
-      span.time-num {
-        transform: translateY(6%);
-        width: 1.7em;
-        text-align: right;
+    .buttons {
+      background-color: yellow;
+
+      svg {
+        --button-size: 64px;
+        width: var(--button-size);
+        height: var(--button-size);
+        background-color: green;
       }
     }
   }
@@ -41,4 +57,8 @@
     width: 400px;
     background-color: blue;
   }
+}
+
+.green {
+  background-color: green;
 }

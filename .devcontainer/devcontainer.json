@@ -15,7 +15,15 @@
 	"forwardPorts": [3000],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "yarn install"
+	"postCreateCommand": "yarn install",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"esbenp.prettier-vscode",
+				"rvest.vs-code-prettier-eslint"
+			]
+		}
+	}
 
 	// Configure tool-specific properties.
 	// "customizations": {},
