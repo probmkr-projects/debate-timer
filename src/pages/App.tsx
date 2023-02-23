@@ -1,8 +1,31 @@
 import React from "react";
 import "./App.scss";
-import { PlayIcon, PauseIcon } from "./lib/svgs";
+import { PlayIcon, PauseIcon } from "../lib/svgs";
+import { Part, TypeJapanese } from "../types/part.d";
 
 const App: React.FC<Record<string, never>> = () => {
+  const flow: Part[] = [
+    {
+      side: "self",
+      type: "construction",
+      duration: 8,
+    },
+    {
+      side: "opponent",
+      type: "opposition",
+      duration: 8,
+    },
+    {
+      side: "opponent",
+      type: "construction",
+      duration: 8,
+    },
+    {
+      side: "self",
+      type: "opposition",
+      duration: 8,
+    },
+  ];
   return (
     <div className="App">
       <div className="timer">
@@ -31,7 +54,7 @@ const App: React.FC<Record<string, never>> = () => {
         <div className="buttons">
           <div
             className="start-pause"
-            onClick={(event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+            onClick={() => {
               const play = document.querySelector(
                 ".start-pause .bi-play-circle"
               );
@@ -50,7 +73,19 @@ const App: React.FC<Record<string, never>> = () => {
       </div>
       <div className="sidebar">
         <div className="flow">
-          <ul></ul>
+          <ul>
+            {flow.map((part: Part, idx: number) => {
+              const date = new Date(part.duration * 1000 * 60);
+              return (
+                <li key={idx} className={part.side}>
+                  <div className="wrapper">
+                    <div className="title">{TypeJapanese[part.type]}</div>
+                    <div className="duration">{`${date.getMinutes()}分${date.getSeconds()}秒`}</div>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     </div>
