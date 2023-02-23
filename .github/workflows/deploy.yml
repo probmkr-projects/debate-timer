@@ -27,10 +27,22 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v3
         with:
-          node-version: "16"
+          node-version: "18"
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
+        with:
+          static_site_generator: next
+
+      - name: Restore Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            .next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFile('**/yarn-lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFile('**/yarn.lock') }}-
 
       - name: Install Dependencies
         run: |
@@ -47,7 +59,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./build
+          path: ./.next
 
   deploy:
     environment:
