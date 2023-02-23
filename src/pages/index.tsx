@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/App.module.scss";
 import { PlayIcon, PauseIcon } from "../lib/svgs";
-import { Part, TypeJapanese } from "../types/part.d";
+import { Part, TypeJapanese } from "../types/part";
 
 const App: React.FC<Record<string, never>> = () => {
   const flow: Part[] = [
