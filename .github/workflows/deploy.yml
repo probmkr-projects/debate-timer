@@ -46,6 +46,8 @@ jobs:
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v1
+        run: |
+          mkdir ./out
         with:
           path: ./out
 
