@@ -69,6 +69,28 @@
     background-color var(--body-transition), border-color var(--body-transition);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-1: var(--dark);
+    --theme-2: var(--gray-5);
+    --theme-3: var(--gray-4);
+    --theme-4: var(--gray-350);
+    --theme-dark-1: var(--dark);
+    --theme-dark-2: var(--gray-5);
+    --theme-dark-3: var(--gray-4);
+    --theme-dark-4: var(--gray-350);
+    --theme-shadow: var(--white-sidebar-shadow);
+    --theme-reverse-1: var(--true-white);
+    --theme-reverse-2: var(--gray-1);
+    --theme-reverse-3: var(--gray-2);
+    --theme-reverse-4: var(--gray-3);
+    --theme-reverse-shadow: var(--black-sidebar-shadow);
+    --text-color: var(--gray-1);
+    --link: #d4bb01;
+    --link-hover: #3483e3;
+  }
+}
+
 .dark-mode {
   --theme-1: var(--dark);
   --theme-2: var(--gray-5);
@@ -87,56 +109,6 @@
   --text-color: var(--gray-1);
   --link: #d4bb01;
   --link-hover: #3483e3;
-}
-
-.communism-mode {
-  --theme-1: #ff0000;
-  --theme-2: #ff4500;
-  --theme-3: #ff6347;
-  --theme-4: #ff7f50;
-  --theme-dark-1: #ff7f50;
-  --theme-dark-2: #ff6347;
-  --theme-dark-3: #ff4500;
-  --theme-dark-4: #ff0000;
-  --theme-reverse-1: green;
-  --theme-reverse-2: forestgreen;
-  --theme-reverse-3: seagreen;
-  --theme-reverse-4: mediumseagreen;
-  --text-color: yellow;
-  --link: yellow;
-  --link-hover: magenta;
-}
-
-.japan-mode {
-  --theme-1: white;
-  --theme-2: white;
-  --theme-3: white;
-  --theme-4: white;
-  --theme-reverse-1: red;
-  --theme-reverse-2: red;
-  --theme-reverse-3: red;
-  --theme-reverse-4: red;
-  --text-color: red;
-  --link: red;
-  --link-hover: #ff00f7;
-
-  #header {
-    border-bottom: red solid 2px;
-
-    #sidebarToggleButton {
-      border-right: red solid 2px;
-      border-bottom: red solid 2px;
-    }
-  }
-
-  #darkModeButton {
-    background-color: white;
-    border: red solid 2px;
-  }
-
-  #footer {
-    border-top: red solid 2px;
-  }
 }
 
 // ## themes helper
