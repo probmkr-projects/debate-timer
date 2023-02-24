@@ -1,15 +1,11 @@
 // # vars
 :root {
   --main-container-padding: 20px;
-  --header-transition: 0.3s ease;
   --header-height: 80px;
-  --body-transition: 0.3s ease;
   --sidebar-width: 280px;
-  --dark-mode-button-transition: 0.3s;
   --dark-mode-button-size: 40px;
   --dark-mode-button-right: 20px;
   --dark-mode-button-bottom: 20px;
-  --footer-transition: 0.3s;
   --footer-height: 100px;
   --user-icon-size: 36px;
   --developer-card-width: 350px;
@@ -65,8 +61,6 @@
 #bgContainer {
   color: var(--text-color);
   background-color: var(--theme-1);
-  transition: color var(--body-transition),
-    background-color var(--body-transition), border-color var(--body-transition);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -111,30 +105,6 @@
   --link-hover: #3483e3;
 }
 
-// ## themes helper
-
-body.communism-mode *::selection {
-  background-color: yellow;
-  color: red;
-}
-
-.japan-circle {
-  z-index: 10000;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  border-radius: 50%;
-  background-color: #0ff;
-  width: 40vh;
-  height: 40vh;
-  mix-blend-mode: difference;
-  transition: all var(--body-transition);
-  pointer-events: none;
-}
-
 // # tags
 
 #container {
@@ -156,8 +126,6 @@ body {
   width: 100vw;
   color: var(--text-color);
   background-color: var(--theme-1);
-  transition: color var(--body-transition),
-    background-color var(--body-transition), border-color var(--body-transition);
   // color: var(--gray-5);
 }
 
@@ -191,7 +159,6 @@ select {
   border-right: var(--theme-4) solid 2px;
   border-bottom: var(--theme-4) solid 2px;
   margin: 5px 0;
-  transition: all var(--body-transition);
 }
 
 input[type="submit"],
@@ -218,7 +185,6 @@ a,
 .link {
   color: var(--link);
   text-decoration: none;
-  transition: color ease 0.2s;
   cursor: pointer;
 }
 
@@ -260,8 +226,6 @@ pre,
   margin: 4px 0;
   white-space: pre-wrap;
   width: 100%;
-  transition: background-color var(--body-transition),
-    border var(--body-transition);
   font-family: "Courier New", Courier, monospace;
   overflow-x: auto;
 }
@@ -422,7 +386,6 @@ svg {
   width: 300px;
   z-index: 103;
   padding: 5px;
-  transition: all var(--body-transition);
 }
 
 // ## svgs
@@ -434,7 +397,6 @@ svg {
   position: relative;
 
   > * {
-    transition: all var(--body-transition);
   }
 
   .svg-clipboard {
@@ -469,8 +431,6 @@ svg {
   width: 40px;
   height: 40px;
   border-radius: 5px;
-  transition: fill var(--footer-transition),
-    background-color var(--footer-transition);
   fill: var(--theme-reverse-2);
 }
 
