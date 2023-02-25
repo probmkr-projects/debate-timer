@@ -1,0 +1,27 @@
+.header {
+  height: var(--header-height);
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--theme-3);
+  box-shadow: 0 -7px 10px 5px var(--dark);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  .title {
+    font-size: 30px;
+    margin-left: 20px;
+  }
+
+  .menu {
+    margin-right: 30px;
+
+    .nav {
+      margin-right: 30px;
+    }
+  }
+}

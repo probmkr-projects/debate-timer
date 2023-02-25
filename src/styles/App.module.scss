@@ -1,9 +1,8 @@
 .App {
   display: flex;
   flex-direction: row;
-  width: 100%;
   height: 100%;
-  min-height: 100vh;
+  width: 100%;
 
   .timer {
     display: flex;
@@ -58,15 +57,15 @@
   .sidebar {
     display: flex;
     width: 400px;
-    background-color: var(--gray-1);
-    box-shadow: 5px 0 10px 2px;
+    background-color: var(--theme-2);
+    box-shadow: 5px 0 10px 2px var(--theme-reverse-3);
+    height: 100%;
 
     .flow {
       --flow-height: 250px;
       width: 100%;
       height: var(--flow-height);
-      margin-top: calc(50vh - calc(var(--flow-height) / 2));
-      margin-bottom: calc(50vh - calc(var(--flow-height) / 2));
+      margin: auto 0;
 
       ul {
         width: 100%;
@@ -80,7 +79,7 @@
             display: flex;
             padding: 5px;
             border-radius: 5px;
-            background-color: var(--gray-2);
+            background-color: var(--theme-3);
             display: flex;
             flex-direction: column;
             align-items: center;
