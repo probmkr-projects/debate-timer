@@ -1,4 +1,14 @@
 .main {
+  h1 {
+    text-align: center;
+  }
   height: 100%;
   padding-top: var(--header-height);
+  padding-left: var(--main-container-padding);
+  padding-right: var(--main-container-padding);
+}
+
+.main.noPadding {
+  padding-left: 0;
+  padding-right: 0;
 }

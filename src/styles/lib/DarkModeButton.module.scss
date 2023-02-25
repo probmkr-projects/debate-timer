@@ -1,0 +1,41 @@
+.darkModeButton {
+  input {
+    display: none;
+  }
+
+  label {
+    transition: background-color ease var(--dark-mode-button-transition);
+    background: #95df00;
+    cursor: pointer;
+    width: 55px;
+    height: 30px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    position: relative;
+  }
+
+  label:after {
+    content: "";
+    background: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 4px;
+    transition: cubic-bezier(0.68, -0.55, 0.27, 01.55)
+      var(--dark-mode-button-transition);
+  }
+
+  input:checked + label {
+    background: #a300d0;
+  }
+
+  input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+}

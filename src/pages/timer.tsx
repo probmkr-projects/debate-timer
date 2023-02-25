@@ -28,7 +28,7 @@ const App: React.FC<Record<string, never>> = () => {
     },
   ];
   return (
-    <Layout>
+    <Layout noSidePadding>
       <div className={styles.App}>
         <div className={styles.timer}>
           <div className={styles.time}>

@@ -6,6 +6,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: var(--theme-3);
+  transition: background-color var(--header-transition);
   box-shadow: 0 -7px 10px 5px var(--dark);
   position: absolute;
   top: 0;
@@ -19,8 +20,13 @@
 
   .menu {
     margin-right: 30px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
 
     .nav {
+      display: flex;
+      flex-direction: row;
       margin-right: 30px;
     }
   }

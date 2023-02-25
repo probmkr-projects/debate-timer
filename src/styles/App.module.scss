@@ -59,6 +59,7 @@
     width: 400px;
     background-color: var(--theme-2);
     box-shadow: 5px 0 10px 2px var(--theme-reverse-3);
+    transition: all var(--body-transition);
     height: 100%;
 
     .flow {
@@ -80,6 +81,7 @@
             padding: 5px;
             border-radius: 5px;
             background-color: var(--theme-3);
+            transition: background-color var(--body-transition);
             display: flex;
             flex-direction: column;
             align-items: center;
