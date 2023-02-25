@@ -18,7 +18,8 @@
 
       .timeWrap {
         padding: 10px;
-        border: 2px solid black;
+        border: 2px solid var(--theme-reverse-3);
+        transition: border var(--dark-mode-transition);
         border-radius: 20px;
 
         span {

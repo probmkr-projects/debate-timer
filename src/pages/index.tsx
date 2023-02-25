@@ -7,7 +7,7 @@ const Home: React.FC<Record<string, never>> = () => {
     <Layout>
       <h1>Welcome to Debate Timer</h1>
       <p>
-        Debate Timer is under development
+        Debate Timer is under development.
         <br />
         Timer: <Link href="/timer">here</Link>
       </p>

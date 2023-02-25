@@ -5,7 +5,6 @@ import DarkModeButton from "./dark-mode-button";
 import headerContents from "./header-contents";
 
 const Header: React.FC<Record<string, never>> = () => {
-  console.log(styles);
   return (
     <header className={styles.header}>
       <div className={styles.title}>Debate Timer</div>
