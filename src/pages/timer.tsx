@@ -48,11 +48,26 @@ class TimerControl {
   runTimer() {
     const remain = this.getRemain.bind(this)();
     this.setRemain(remain >= 0 ? remain : 0);
+    if (remain <= 0) {
+      this.isRunning = false
+      this.togglePlayPuase()
+    }
     if (this.isRunning) {
       setTimeout(this.runTimer.bind(this), 10);
     } else {
       this.remainMSec = this.getRemain();
     }
+  }
+
+  togglePlayPuase() {
+    const play = document.querySelector(
+      `.start-pause .bi-play-circle`
+    );
+    const pause = document.querySelector(
+      `.start-pause .bi-pause-circle`
+    );
+    play?.classList.toggle(styles.hide);
+    pause?.classList.toggle(styles.hide);
   }
 }
 
@@ -109,14 +124,7 @@ const App: React.FC<Record<string, never>> = () => {
             <div
               className="start-pause"
               onClick={(event) => {
-                const play = document.querySelector(
-                  `.start-pause .bi-play-circle`
-                );
-                const pause = document.querySelector(
-                  `.start-pause .bi-pause-circle`
-                );
-                play?.classList.toggle(styles.hide);
-                pause?.classList.toggle(styles.hide);
+                timerController.togglePlayPuase()
                 timerController.handleStartStop(event);
               }}
             >
