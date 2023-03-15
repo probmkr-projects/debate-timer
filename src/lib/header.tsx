@@ -14,7 +14,7 @@ const Header: React.FC<Record<string, never>> = () => {
           <ul>
             {headerContents.map((value, idx) => {
               return (
-                <li key={idx}>
+                <li key={idx} className="clearfix">
                   <Link href={value.url}>{value.name}</Link>
                 </li>
               );

@@ -25,6 +25,11 @@
         span {
           display: inline-block;
         }
+
+        .msec {
+          margin-left: 30px;
+          font-size: 0.5em;
+        }
       }
     }
 
@@ -73,10 +78,12 @@
         width: 100%;
 
         li {
-          margin: 5px 20px;
-          clear: both;
+          margin: 5px 0;
+          width: 100%;
+          display: inline-flex;
 
           .wrapper {
+            margin: 0 20px;
             width: 150px;
             display: flex;
             padding: 5px;
@@ -89,12 +96,17 @@
           }
         }
 
-        li.self {
-          float: right;
+        li.affirmative {
+          justify-content: flex-start;
         }
 
-        li.opponent {
-          float: left;
+        li.negative {
+          justify-content: flex-end;
+        }
+
+        li.both > .wrapper {
+          width: 100%;
+          flex: 1;
         }
       }
     }
