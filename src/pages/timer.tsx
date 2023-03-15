@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "../styles/Timer.module.scss";
 import { PlayIcon, PauseIcon } from "../lib/svgs";
 import { Part, SideJapanese, TypeJapanese } from "../lib/part";
@@ -49,8 +49,8 @@ class TimerControl {
     const remain = this.getRemain.bind(this)();
     this.setRemain(remain >= 0 ? remain : 0);
     if (remain <= 0) {
-      this.isRunning = false
-      this.togglePlayPuase()
+      this.isRunning = false;
+      this.togglePlayPuase();
     }
     if (this.isRunning) {
       setTimeout(this.runTimer.bind(this), 10);
@@ -60,12 +60,8 @@ class TimerControl {
   }
 
   togglePlayPuase() {
-    const play = document.querySelector(
-      `.start-pause .bi-play-circle`
-    );
-    const pause = document.querySelector(
-      `.start-pause .bi-pause-circle`
-    );
+    const play = document.querySelector(`.start-pause .bi-play-circle`);
+    const pause = document.querySelector(`.start-pause .bi-pause-circle`);
     play?.classList.toggle(styles.hide);
     pause?.classList.toggle(styles.hide);
   }
@@ -100,7 +96,7 @@ const App: React.FC<Record<string, never>> = () => {
       duration: 8,
     },
   ] as Part[]);
-  const [remain, setRemain] = useState(0);
+  const [remain, setRemain] = useState(flow[0].duration * 60 * 1000);
   const [timerController] = useState(new TimerControl(flow, setRemain));
   return (
     <Layout noSidePadding>
@@ -124,7 +120,7 @@ const App: React.FC<Record<string, never>> = () => {
             <div
               className="start-pause"
               onClick={(event) => {
-                timerController.togglePlayPuase()
+                timerController.togglePlayPuase();
                 timerController.handleStartStop(event);
               }}
             >
