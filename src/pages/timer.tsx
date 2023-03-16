@@ -30,8 +30,8 @@ class TimerControl {
     this.isRunning = !this.isRunning;
     if (this.isRunning) {
       if (this.remainMSec <= 0) {
-        if (++this.currentIdx > this.flow.length) {
-          ("nothing");
+        if (++this.currentIdx >= this.flow.length) {
+          console.log("last");
         }
         this.remainMSec = this.flow[this.currentIdx].duration * 60 * 1000;
       }
@@ -80,22 +80,22 @@ const App: React.FC<Record<string, never>> = () => {
     {
       side: "negative",
       type: "prepare",
-      duration: 60,
+      duration: 1,
     },
     {
       side: "negative",
       type: "opposition",
-      duration: 8,
+      duration: 0.05,
     },
     {
       side: "negative",
       type: "construction",
-      duration: 8,
+      duration: 0.05,
     },
     {
       side: "affirmative",
       type: "opposition",
-      duration: 8,
+      duration: 0.05,
     },
   ] as Part[]);
   const [remain, setRemain] = useState(flow[0].duration * 60 * 1000);
@@ -107,14 +107,15 @@ const App: React.FC<Record<string, never>> = () => {
           <div className={styles.time}>
             <div className={styles.timeWrap}>
               <span id="min" className={`${styles.timeNum} ${styles.min}`}>
-                {`0${Math.floor(remain / 60 / 1000).toString()}`.slice(-2)}
+                {`0${Math.floor((remain + 999) / 1000 / 60).toString()}`.slice(
+                  -2
+                )}
               </span>
               <span className={styles.sep}>:</span>
               <span id="sec" className={`${styles.timeNum} ${styles.sec}`}>
-                {`0${(Math.floor(remain / 1000) % 60).toString()}`.slice(-2)}
-              </span>
-              <span id="msec" className={`${styles.timeNum} ${styles.msec}`}>
-                {`000${(remain % 1000).toString()}`.slice(-2)}
+                {`0${(
+                  Math.floor((remain + 999) / 1000) % 60
+                ).toString()}`.slice(-2)}
               </span>
             </div>
           </div>
