@@ -17,10 +17,13 @@
       justify-content: center;
 
       .timeWrap {
+        z-index: 1000;
         padding: 10px;
         border: 2px solid var(--theme-reverse-3);
         transition: border var(--dark-mode-transition);
         border-radius: 20px;
+        color: var(--theme-reverse-3);
+        transition: all var(--body-transition);
 
         span {
           display: inline-block;
@@ -30,6 +33,12 @@
           margin-left: 30px;
           font-size: 0.5em;
         }
+      }
+
+      .timeShadowWrap {
+        z-index: 999;
+        position: absolute;
+        color: var(--theme-3);
       }
     }
 
