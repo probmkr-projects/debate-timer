@@ -41,6 +41,7 @@ class TimerControl {
     }
   };
 
+  // 残り時間を返す
   getRemain() {
     return this.remainMSec - (new Date().getTime() - this.beginTime);
   }
@@ -51,6 +52,7 @@ class TimerControl {
     if (remain <= 0) {
       this.isRunning = false;
       this.togglePlayPuase();
+      this.setRemain(this.flow[this.currentIdx + 1].duration * 60 * 1000);
     }
     if (this.isRunning) {
       setTimeout(this.runTimer.bind(this), 10);
