@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import styles from "../styles/Timer.module.scss";
-import { PlayIcon, PauseIcon } from "../lib/svgs";
-import { Part, SideJapanese, TypeJapanese } from "../lib/part";
+import styles from "@/styles/Timer.module.scss";
+import { PlayIcon, PauseIcon } from "@/lib/svgs";
+import { Part, SideJapanese, TypeJapanese } from "@/lib/part";
 import Layout from "@/lib/layout";
 
 class TimerControl {
@@ -103,6 +103,9 @@ const App: React.FC<Record<string, never>> = () => {
       <div className={styles.App}>
         <div className={styles.timer}>
           <div className={styles.time}>
+            <div className={`${styles.timeWrap} ${styles.timeShadowWrap}`}>
+              88:88
+            </div>
             <div className={styles.timeWrap}>
               <span id="min" className={`${styles.timeNum} ${styles.min}`}>
                 {`0${Math.floor((remain + 999) / 1000 / 60).toString()}`.slice(
