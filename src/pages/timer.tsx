@@ -48,8 +48,9 @@ class TimerControl {
 
   runTimer() {
     const remain = this.getRemain.bind(this)();
-    this.setRemain(remain >= 0 ? remain : 0);
-    if (remain <= 0) {
+    if (remain > 0) {
+      this.setRemain(remain);
+    } else {
       this.isRunning = false;
       this.togglePlayPuase();
     }
