@@ -53,7 +53,7 @@ class TimerControl {
     } else {
       this.isRunning = false;
       this.togglePlayPuase();
-      this.setRemain(this.flow[this.currentIdx + 1].duration * 60 * 1000);
+      this.setRemain(0);
     }
     if (this.isRunning) {
       setTimeout(this.runTimer.bind(this), 10);
