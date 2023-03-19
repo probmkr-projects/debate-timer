@@ -63,10 +63,12 @@ class TimerControl {
   }
 
   togglePlayPuase() {
-    const play = document.querySelector(`.start-pause .bi-play-circle`);
-    const pause = document.querySelector(`.start-pause .bi-pause-circle`);
-    play?.classList.toggle(styles.hide);
-    pause?.classList.toggle(styles.hide);
+    document
+      .querySelector(`.start-pause .bi-play-circle`)
+      ?.classList.toggle(styles.hide);
+    document
+      .querySelector(`.start-pause .bi-pause-circle`)
+      ?.classList.toggle(styles.hide);
   }
 }
 
