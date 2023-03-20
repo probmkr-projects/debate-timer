@@ -48,6 +48,7 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
+      z-index: 1001;
 
       div {
         height: var(--button-size);
@@ -116,6 +117,29 @@
         li.both > .wrapper {
           width: 100%;
           flex: 1;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .App {
+    .timer {
+      .time {
+        font-size: 60px;
+      }
+    }
+    .sidebar {
+      position: absolute;
+      background-color: transparent;
+      .flow {
+        ul {
+          li {
+            .wrapper {
+              width: 100px;
+            }
+          }
         }
       }
     }
