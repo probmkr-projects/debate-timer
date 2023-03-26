@@ -498,11 +498,11 @@ svg {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 .invisible {
-  visibility: hidden;
+  visibility: hidden !important;
 }
 
 // # scroll bar

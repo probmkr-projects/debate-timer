@@ -76,20 +76,26 @@
     box-shadow: 5px 0 10px 2px var(--theme-reverse-3);
     transition: all var(--body-transition);
     height: 100%;
+    overflow-y: auto;
 
     .flow {
       --flow-height: 250px;
       width: 100%;
       height: var(--flow-height);
-      margin: auto 0;
+      margin-top: 50px;
 
       ul {
         width: 100%;
+        font-size: 16px;
 
         li {
+          z-index: 1000;
           margin: 5px 0;
           width: 100%;
           display: inline-flex;
+          line-height: 1.5em;
+          height: 58px;
+          position: relative;
 
           .wrapper {
             margin: 0 20px;
@@ -117,6 +123,31 @@
           width: 100%;
           flex: 1;
         }
+
+        li.highlight {
+          z-index: 990;
+          background-color: #00eeff;
+          height: 68px;
+          margin: 0;
+          // height: 100px;
+          position: relative;
+          // animation-name: moving;
+          // animation-duration: 1s;
+          // animation-delay: 1s;
+          // animation-timing-function: ease-in-out;
+          // animation-fill-mode: forwards;
+          top: calc((68px) * 1 + 5px);
+          transition: top ease-in-out 0.5s;
+        }
+
+        // @keyframes moving {
+        //   from {
+        //     top: calc((68px) * 2 + 5px);
+        //   }
+        //   to {
+        //     top: calc((68px) * 3 + 5px);
+        //   }
+        // }
       }
     }
   }
