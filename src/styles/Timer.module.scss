@@ -89,7 +89,7 @@
         font-size: 16px;
 
         li {
-          z-index: 1000;
+          z-index: 980;
           margin: 5px 0;
           width: 100%;
           display: inline-flex;
@@ -98,6 +98,8 @@
           position: relative;
 
           .wrapper {
+            background-color: var(--theme-3);
+            z-index: 1000;
             margin: 0 20px;
             width: 150px;
             display: flex;
@@ -126,28 +128,49 @@
 
         li.highlight {
           z-index: 990;
-          background-color: #00eeff;
+          border: #00eeff88 dotted 2px;
           height: 68px;
           margin: 0;
-          // height: 100px;
           position: relative;
-          // animation-name: moving;
-          // animation-duration: 1s;
-          // animation-delay: 1s;
-          // animation-timing-function: ease-in-out;
-          // animation-fill-mode: forwards;
           top: calc((68px) * 1 + 5px);
           transition: top ease-in-out 0.5s;
-        }
+          display: inline-flex;
 
-        // @keyframes moving {
-        //   from {
-        //     top: calc((68px) * 2 + 5px);
-        //   }
-        //   to {
-        //     top: calc((68px) * 3 + 5px);
-        //   }
-        // }
+          span {
+            // background-color: red;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+          }
+
+          .lt {
+            top: -2px;
+            border-top: #00eeff solid 2px;
+            left: -2px;
+            border-left: #00eeff solid 2px;
+          }
+
+          .rt {
+            top: -2px;
+            border-top: #00eeff solid 2px;
+            right: -2px;
+            border-right: #00eeff solid 2px;
+          }
+
+          .lb {
+            bottom: -2px;
+            border-bottom: #00eeff solid 2px;
+            left: -2px;
+            border-left: #00eeff solid 2px;
+          }
+
+          .rb {
+            bottom: -2px;
+            border-bottom: #00eeff solid 2px;
+            right: -2px;
+            border-right: #00eeff solid 2px;
+          }
+        }
       }
     }
   }
