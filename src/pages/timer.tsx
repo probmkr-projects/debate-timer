@@ -162,7 +162,12 @@ const App: React.FC<Record<string, never>> = () => {
         <div className={styles.sidebar}>
           <div className={styles.flow}>
             <ul>
-              <li className={styles.highlight} id="highlight"></li>
+              <li className={styles.highlight} id="highlight">
+                <span className={styles.lt}></span>
+                <span className={styles.rt}></span>
+                <span className={styles.lb}></span>
+                <span className={styles.rb}></span>
+              </li>
               {flow.map((part: Part, idx: number) => {
                 const second = part.duration * 60;
                 return (
