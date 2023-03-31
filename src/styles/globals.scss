@@ -10,6 +10,8 @@
   --dark-mode-button-size: 40px;
   --dark-mode-button-right: 20px;
   --dark-mode-button-bottom: 20px;
+  --highlight-border: #006fdf dotted 3px;
+  --highlight-corner-border: #006fdf solid 3px;
   --footer-transition: var(--dark-mode-transition) ease;
   --footer-height: 100px;
   --user-icon-size: 36px;
@@ -71,6 +73,8 @@
 }
 
 .dark-mode {
+  --highlight-border: #00eeff dotted 3px;
+  --highlight-corner-border: #00eeff solid 3px;
   --theme-1: var(--dark);
   --theme-2: var(--gray-5);
   --theme-3: var(--gray-4);
