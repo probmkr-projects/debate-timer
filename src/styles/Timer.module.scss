@@ -19,7 +19,7 @@
       .timeWrap {
         z-index: 1000;
         padding: 10px;
-        border: 2px solid var(--theme-reverse-3);
+        border: 3px solid var(--theme-reverse-3);
         transition: border var(--dark-mode-transition);
         border-radius: 20px;
         color: var(--theme-reverse-3);
@@ -73,7 +73,7 @@
     display: flex;
     width: 400px;
     background-color: var(--theme-2);
-    box-shadow: 5px 0 10px 2px var(--theme-reverse-3);
+    box-shadow: 5px 0 10px 3px var(--theme-reverse-3);
     transition: all var(--body-transition);
     height: 100%;
     overflow-y: auto;
@@ -81,12 +81,16 @@
     .flow {
       --flow-height: 250px;
       width: 100%;
-      height: var(--flow-height);
-      margin-top: 50px;
+      height: calc(100% - 100px);
+      margin: 50px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
       ul {
         width: 100%;
         font-size: 16px;
+        margin-top: -58px;
 
         li {
           z-index: 980;
@@ -128,12 +132,12 @@
 
         li.highlight {
           z-index: 990;
-          border: #00eeff88 dotted 2px;
+          border: var(--highlight-border);
           height: 68px;
           margin: 0;
           position: relative;
           top: calc((68px) * 1 + 5px);
-          transition: top ease-in-out 0.5s;
+          transition: top ease-in-out 0.5s, border var(--body-transition);
           display: inline-flex;
 
           span {
@@ -141,34 +145,35 @@
             position: absolute;
             width: 10px;
             height: 10px;
+            transition: border var(--body-transition);
           }
 
           .lt {
-            top: -2px;
-            border-top: #00eeff solid 2px;
-            left: -2px;
-            border-left: #00eeff solid 2px;
+            top: -3px;
+            border-top: var(--highlight-corner-border);
+            left: -3px;
+            border-left: var(--highlight-corner-border);
           }
 
           .rt {
-            top: -2px;
-            border-top: #00eeff solid 2px;
-            right: -2px;
-            border-right: #00eeff solid 2px;
+            top: -3px;
+            border-top: var(--highlight-corner-border);
+            right: -3px;
+            border-right: var(--highlight-corner-border);
           }
 
           .lb {
-            bottom: -2px;
-            border-bottom: #00eeff solid 2px;
-            left: -2px;
-            border-left: #00eeff solid 2px;
+            bottom: -3px;
+            border-bottom: var(--highlight-corner-border);
+            left: -3px;
+            border-left: var(--highlight-corner-border);
           }
 
           .rb {
-            bottom: -2px;
-            border-bottom: #00eeff solid 2px;
-            right: -2px;
-            border-right: #00eeff solid 2px;
+            bottom: -3px;
+            border-bottom: var(--highlight-corner-border);
+            right: -3px;
+            border-right: var(--highlight-corner-border);
           }
         }
       }
